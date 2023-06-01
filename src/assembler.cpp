@@ -5,25 +5,6 @@
 #include <cmath>
 #include <bitset>
 using namespace std;
-#define ull unsigned long long int
-
-// Function to return the binary
-// equivalent of decimal value N
-//int decimalToBinary(int N)
-//{
-//    // To store the binary number
-//    ull B_Number = 0;
-//    int cnt = 0;
-//    while (N != 0) {
-//        int rem = N % 2;
-//        ull c = pow(10, cnt);
-//        B_Number += rem * c;
-//        N /= 2;
-//        // Count used to store exponent value
-//        cnt++;
-//    }
-//    return B_Number;
-//}
 
 long long decimalToBinary(int n) {
   long long bin = 0;
@@ -86,7 +67,7 @@ int main() {
 	instructionRead instruction;
 	string line;
 	ifstream readFrom;
-	readFrom.open("/media/sf_n0va/program.txt");
+	readFrom.open("program.asm");
 	int addr = 0;
 	int count = 0;
 	bool jumpMacro = false;
@@ -266,7 +247,7 @@ int main() {
 		}
 	}
     FILE *fp;
-    fp = fopen("/media/sf_n0va/inst_mem.txt","w");
+    fp = fopen("inst_mem.hex","w");
     fprintf(fp, "v2.0 raw\n");
 	for(int index = 0;index<count; index++){
 		cout << "code: " <<  instructions.at(index).text << endl;
